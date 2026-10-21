@@ -1,0 +1,29 @@
+{
+	"compatibility_date": "2025-10-08",
+	"main": "src/index.ts",
+	"name": "worker-previews-starter",
+	"upload_source_maps": true,
+	// Production settings live at the top level.
+	"vars": {
+		"ENVIRONMENT": "production"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_id": "1d7c71c4-7f13-4c1f-b1e9-2cfac1517e56",
+			"database_name": "activity-log-db"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	// Preview settings live here. Previews don't inherit production vars or
+	// bindings: add Preview-only bindings (like the Preview D1 database) here.
+	// A Preview D1 database's migrations are applied through
+	// wrangler.preview-migrations.jsonc, which must point at the same database.
+	"previews": {
+		"vars": {
+			"ENVIRONMENT": "preview"
+		}
+	}
+}
